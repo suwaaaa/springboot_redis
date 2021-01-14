@@ -12,65 +12,68 @@ import javax.annotation.Generated;
 /**
  * 在末尾加入数据库执行的SQL语句
  * 
- * 
  * Class Name: User.java Description:
  * 
- * @author suwaaaa DateTime 2021�??1�??12�?? 下午8:55:50
+ * @author suwaaaa DateTime 2021�???1�???12�??? 下午8:55:50
  * @email 1264584869@qq.com
  * @version 1.0
  */
 @Data
-public class User {/**
-	 * Database Column Remarks: �û�ID
+public class User {
+
+	
+	
+	/*
+	 * private int userId;
+	 * 
+	 * private String address;
+	 * 
+	 * @JsonInclude(Include.NON_NULL) 
+	 * private Object phone;
+	 * 
+	 * private String mail;
+	 * 
+	 * @JsonInclude(Include.NON_NULL) 
+	 * private String name;
+	 * 
+	 * private String age;
+	 * 
+	 * private boolean vip;
 	 */
-	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.userId")
-	private Integer userId;
-	/**
-	 * Database Column Remarks: �û�����
-	 */
+	  
+	  private Integer userid;
+
 	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.age")
 	private Integer age;
-	/**
-	 * Database Column Remarks: �û�����
-	 */
+
 	@JsonInclude(Include.NON_NULL)
 	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.name")
 	private String name;
-	/**
-	 * Database Column Remarks: �û���ַ
-	 */
+
 	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.address")
 	private String address;
-	/**
-	 * Database Column Remarks: �û�����
-	 */
+
 	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.passcode")
 	private String passcode;
-	/**
-	 * Database Column Remarks: �û��ֻ���
-	 */
+
 	@JsonInclude(Include.NON_NULL)
 	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.phone")
 	private Integer phone;
-	/**
-	 * Database Column Remarks: �û�����
-	 */
+
 	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.mail")
 	private String mail;
-	/**
-	 * Database Column Remarks: �û�vip
-	 */
+
 	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.vip")
 	private Boolean vip;
 
-	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.userId")
-	public Integer getUserId() {
-		return userId;
+	private Integer creatTime;
+
+	public Integer getUserid() {
+		return userid;
 	}
 
-	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.userId")
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 
 	@Generated(value = "org.mybatis.generator.api.MyBatisGenerator", comments = "Source field: user.age")
@@ -143,25 +146,15 @@ public class User {/**
 		this.vip = vip;
 	}
 
-	
-	
-	/*
-	 * private int userId;
-	 * 
-	 * private String address;
-	 * 
-	 * @JsonInclude(Include.NON_NULL) private Object phone;
-	 * 
-	 * private String mail;
-	 * 
-	 * @JsonInclude(Include.NON_NULL) private String name;
-	 * 
-	 * private String age;
-	 * 
-	 * private boolean vip;
-	 */
-	  
-	  @JsonProperty("passcode")
+	public Integer getCreatTime() {
+		return creatTime;
+	}
+
+	public void setCreatTime(Integer creatTime) {
+		this.creatTime = creatTime;
+	}
+
+	@JsonProperty("passcode")
 	  
 	  @JsonIgnore private String password;
 	  
@@ -177,7 +170,7 @@ public class User {/**
 	 * '用户ID', `age` int(11) NOT NULL COMMENT '用户年龄', `name` char(20) NOT NULL
 	 * DEFAULT '' COMMENT '用户名称', `address` varchar(255) NOT NULL DEFAULT '' COMMENT
 	 * '用户地址', `passcode` varchar(255) NOT NULL DEFAULT '' COMMENT '用户密码', `phone`
-	 * int(11) NOT NULL COMMENT '用户手机�??', `mail` varchar(255) NOT NULL DEFAULT ''
+	 * int(11) NOT NULL COMMENT '用户手机�???', `mail` varchar(255) NOT NULL DEFAULT ''
 	 * COMMENT '用户邮箱', `vip` BOOLEAN COMMENT '用户vip', `creat_time` int(20) NOT NULL
 	 * COMMENT '用户创建时间', PRIMARY KEY (`userId`) ) ENGINE=InnoDB AUTO_INCREMENT=10
 	 * DEFAULT CHARSET=utf8;

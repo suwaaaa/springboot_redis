@@ -6,12 +6,13 @@
 		location="E:\ecplise\workspace\spring_boot_test\mysql-connector-java-5.1.39-bin.jar" />
 
 
-	<context id="context1">
+	<context id="context1" targetRuntime="MyBatis3">
 		<!-- 生成数据库的注释信息，并且禁止在 注释中生成日期 -->
-			<commentGenerator>
-				<property name="suppressDate" value="true"/>
-				<property name="addRemarkComments" value="true"/>
-			</commentGenerator>
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<!-- <property name="addRemarkComments" value="true"/> -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
 
 		<!-- 数据库连接信息 -->
 		<jdbcConnection
@@ -22,17 +23,35 @@
 		<!-- targetPackage 指定 model 类的包名， targetProject指定生成的 model 放在 eclipse 的哪个工程下面 -->
 		<javaModelGenerator
 			targetPackage="suwaaaa.author.springboot_redis.damain"
-			targetProject="springboot_redis\src\main\java" />
+			targetProject="springboot_redis\src\main\java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="false" />
+		</javaModelGenerator>
+		
+		<sqlMapGenerator targetPackage="suwaaaa.author.springboot_redis.mapper"
+        targetProject="springboot_redis\src\main\java">
+        <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        
+        
 
 		<!-- 生成DAO地址 -->
-		<javaClientGenerator
+		<javaClientGenerator type="XMLMAPPER"
+        targetPackage="suwaaaa.author.springboot_redis.dao"
+
+        targetProject="springboot_redis\src\main\java">
+        <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+        
+		<!-- <javaClientGenerator
 			targetPackage="suwaaaa.author.springboot_redis.dao"
-			targetProject="springboot_redis\src\main\java" type="XMLMAPPER" />
+			targetProject="springboot_redis\src\main\java" type="XMLMAPPER" >
+			</javaClientGenerator> -->
 		<!-- 在targetPackage的基础上，在package下生成$schema包，默认为false -->
 		<!-- <property name="enableSubPackages" value="false"/> -->
 
 		<!-- 数据库表名及对应的 Java 模型类名 -->
-		<table schema="springboot_redis" tableName="user">
+		<!-- <table schema="springboot_redis" tableName="user">
 			<columnOverride column="AGE" property="age" />
 			<columnOverride column="NAME" property="name" />
 			<columnOverride column="ADDRESS" property="address" />
@@ -40,9 +59,15 @@
 			<columnOverride column="MAIL" property="mail" />
 			<columnOverride column="VIP" property="vip" />
 			<columnOverride column="USERID" property="userId" />
-			<!-- 忽略列，不生成bean 字段 -->
-			<!-- <ignoreColumn column="passcode" /> -->
+			忽略列，不生成bean 字段
+			<ignoreColumn column="passcode" />
 			<ignoreColumn column="creat_time" />
-		</table>
+		</table> -->
+		 <table tableName="user" domainObjectName="User"
+                   enableCountByExample="false"
+                   enableUpdateByExample="false"
+                   enableDeleteByExample="false"
+                   enableSelectByExample="false"
+                   selectByExampleQueryId="false"/>
 	</context>
 </generatorConfiguration>

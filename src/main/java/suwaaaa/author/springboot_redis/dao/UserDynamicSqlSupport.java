@@ -11,56 +11,56 @@ public final class UserDynamicSqlSupport {
 
     /**
      * Database Column Remarks:
-     *   ÓÃ»§ID
+     *   ï¿½Ã»ï¿½ID
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.userId")
     public static final SqlColumn<Integer> userId = user.userId;
 
     /**
      * Database Column Remarks:
-     *   ÓÃ»§ÄêÁä
+     *   ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.age")
     public static final SqlColumn<Integer> age = user.age;
 
     /**
      * Database Column Remarks:
-     *   ÓÃ»§Ãû³Æ
+     *   ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.name")
     public static final SqlColumn<String> name = user.name;
 
     /**
      * Database Column Remarks:
-     *   ÓÃ»§µØÖ·
+     *   ï¿½Ã»ï¿½ï¿½ï¿½Ö·
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.address")
     public static final SqlColumn<String> address = user.address;
 
     /**
      * Database Column Remarks:
-     *   ÓÃ»§ÃÜÂë
+     *   ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.passcode")
     public static final SqlColumn<String> passcode = user.passcode;
 
     /**
      * Database Column Remarks:
-     *   ÓÃ»§ÊÖ»úºÅ
+     *   ï¿½Ã»ï¿½ï¿½Ö»ï¿½ï¿½ï¿½
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.phone")
     public static final SqlColumn<Integer> phone = user.phone;
 
     /**
      * Database Column Remarks:
-     *   ÓÃ»§ÓÊÏä
+     *   ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.mail")
     public static final SqlColumn<String> mail = user.mail;
 
     /**
      * Database Column Remarks:
-     *   ÓÃ»§vip
+     *   ï¿½Ã»ï¿½vip
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.vip")
     public static final SqlColumn<Boolean> vip = user.vip;
