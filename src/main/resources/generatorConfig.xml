@@ -37,7 +37,7 @@
 
 		<!-- 生成DAO地址 -->
 		<javaClientGenerator type="XMLMAPPER"
-        targetPackage="suwaaaa.author.springboot_redis.dao"
+        targetPackage="suwaaaa.author.springboot_redis.mapper"
 
         targetProject="springboot_redis\src\main\java">
         <property name="enableSubPackages" value="false"/>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="suwaaaa.author.springboot_redis.dao.UserMapper">
+<mapper namespace="suwaaaa.author.springboot_redis.mapper.UserMapper">
   <resultMap id="BaseResultMap" type="suwaaaa.author.springboot_redis.damain.User">
     <id column="userId" jdbcType="INTEGER" property="userid" />
     <result column="age" jdbcType="INTEGER" property="age" />
-    <result column="name" jdbcType="CHAR" property="name" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="passcode" jdbcType="VARCHAR" property="passcode" />
     <result column="phone" jdbcType="INTEGER" property="phone" />
     <result column="mail" jdbcType="VARCHAR" property="mail" />
     <result column="vip" jdbcType="BIT" property="vip" />
-    <result column="creat_time" jdbcType="INTEGER" property="creatTime" />
+    <result column="creat_time" jdbcType="DATE" property="creatTime" />
   </resultMap>
   <sql id="Base_Column_List">
     userId, age, name, address, passcode, phone, mail, vip, creat_time
@@ -29,9 +29,9 @@
     insert into user (userId, age, name, 
       address, passcode, phone, 
       mail, vip, creat_time)
-    values (#{userid,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, #{name,jdbcType=CHAR}, 
+    values (#{userid,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
       #{address,jdbcType=VARCHAR}, #{passcode,jdbcType=VARCHAR}, #{phone,jdbcType=INTEGER}, 
-      #{mail,jdbcType=VARCHAR}, #{vip,jdbcType=BIT}, #{creatTime,jdbcType=INTEGER})
+      #{mail,jdbcType=VARCHAR}, #{vip,jdbcType=BIT}, #{creatTime,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="suwaaaa.author.springboot_redis.damain.User">
     insert into user
@@ -72,7 +72,7 @@
         #{age,jdbcType=INTEGER},
       </if>
       <if test="name != null">
-        #{name,jdbcType=CHAR},
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
@@ -90,7 +90,7 @@
         #{vip,jdbcType=BIT},
       </if>
       <if test="creatTime != null">
-        #{creatTime,jdbcType=INTEGER},
+        #{creatTime,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -101,7 +101,7 @@
         age = #{age,jdbcType=INTEGER},
       </if>
       <if test="name != null">
-        name = #{name,jdbcType=CHAR},
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="address != null">
         address = #{address,jdbcType=VARCHAR},
@@ -119,7 +119,7 @@
         vip = #{vip,jdbcType=BIT},
       </if>
       <if test="creatTime != null">
-        creat_time = #{creatTime,jdbcType=INTEGER},
+        creat_time = #{creatTime,jdbcType=DATE},
       </if>
     </set>
     where userId = #{userid,jdbcType=INTEGER}
@@ -127,13 +127,13 @@
   <update id="updateByPrimaryKey" parameterType="suwaaaa.author.springboot_redis.damain.User">
     update user
     set age = #{age,jdbcType=INTEGER},
-      name = #{name,jdbcType=CHAR},
+      name = #{name,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       passcode = #{passcode,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=INTEGER},
       mail = #{mail,jdbcType=VARCHAR},
       vip = #{vip,jdbcType=BIT},
-      creat_time = #{creatTime,jdbcType=INTEGER}
+      creat_time = #{creatTime,jdbcType=DATE}
     where userId = #{userid,jdbcType=INTEGER}
   </update>
 </mapper>
