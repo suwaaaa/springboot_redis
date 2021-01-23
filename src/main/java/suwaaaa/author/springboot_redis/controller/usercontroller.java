@@ -11,9 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
 import suwaaaa.author.springboot_redis.damain.User;
 import suwaaaa.author.springboot_redis.service.UserService;
 
+
+
+@ApiOperation("USER的控制类")         //   在swagger上显示的
 @RestController
 @RequestMapping("/api/v1/user")
 public class usercontroller {

@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Data;
@@ -22,31 +26,40 @@ import javax.annotation.Generated;
  * @version 1.0
  */
 //@Data
+@ApiModel("用户实体类")    //  在swagger上的modle加上注释
 public class User {
 	
 
-	
+	@ApiModelProperty("用户的id")
 	  private Integer userid;
 	  
+	@ApiModelProperty("用户年龄")
 	  private Integer age;
 	  
+	@ApiModelProperty("用户名字")
 	  @JsonInclude(Include.NON_NULL)
 	  private String name;
 	  
+	@ApiModelProperty("用户地址")
 	  private String address;
 	  
+	@ApiModelProperty("用户密码")
 	  @JsonInclude(Include.NON_NULL)
 	  @JsonIgnore
 	  @JsonProperty("passcode")
 	  private String passcode;
 	  
+	@ApiModelProperty("用户手机号码")
 	  @JsonInclude(Include.NON_NULL)
 	  private Integer phone;
 	  
+	@ApiModelProperty("用户邮箱")
 	  private String mail;
 	  
+	@ApiModelProperty("用户的vip权限")
 	  private Boolean vip;
 	  
+	@ApiModelProperty("用户创建的时间")
 	  @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", locale = "zh", timezone ="GMT+8")
 	  private Date creatTime;
 
